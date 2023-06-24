@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-header-nav">
+            <ul class="main-header-itemlist">
+                <li class="main-header-item"><a class="active" href="/">Shop</a></li>
+                <li class="main-header-item"><a href="/add-product">Add Product</a></li>
+                <button class="contact"><a href="/contact-us">Contact us</a></button>
+
+            </ul>
+        </nav>
+    </header>
+    <form action="/success" method="post">
+        Name <input type="text" ><br><br>
+        Email <input type="text" >
+        <button type="submit">Submit</button>
+    </form><br><br>
+    
+    <script>
+        
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+          event.preventDefault(); 
+          fetch("/success", { method: "POST" }) 
+            .then(response => {
+              if (response.ok) {
+                return response.text(); 
+              
+              }
+            })
+        });
+        
+      </script>
+</body>
+</html>

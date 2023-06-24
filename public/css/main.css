@@ -1,0 +1,71 @@
+ody{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+main{
+    padding: 1rem;
+}
+.main-header
+{
+    width: 100%;
+    height: 3.5rem;
+    background-color: rgb(239, 155, 28);
+}
+.main-header-itemlist{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.main-header-item a{
+    text-decoration: none;
+    color: white;
+}
+.main-header-item{
+    margin: 0 1rem;
+    padding: 0 1rem;
+}
+.main-header-item a:hover,
+.main-header-item a:active,
+.main-header-item a:active{
+    color: #3333ef;
+}
+
+.main-header-nav{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.form-control{
+    margin: 1rem 0;
+}
+.form-control label, .form-control input{
+    display: block;
+}
+.form-control input{
+    border: 1px solid rgb(99, 140, 17);
+    font: inherit;
+}
+button{
+    border: 1px solid saddlebrown;
+    color: rgb(193, 236, 236);
+    background-color: rgb(37, 61, 61);
+    font: inherit;
+    border-radius: 3px;
+}
+button:hover,
+button:active{
+    background-color: azure;
+    color: #3333ef;
+}
+.form-control label, .form-control input{
+    display: block;
+    width: 100%;
+
+}
+.contact button:hover,
+.contact button:active{
+    background-color: azure;
+    color: #3333ef;
+}
