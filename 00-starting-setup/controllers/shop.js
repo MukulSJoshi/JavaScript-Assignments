@@ -14,22 +14,26 @@ exports.getProducts = (req, res, next) => {
 
 exports.getProduct= (req,res,next)=>{
   const prodId=req.params.id
-  Product.findById(prodId,product=>{ res.render('/shop/product-details', {product: product,
+  Product.findById(prodId).then(([product])=>{ res.render('shop/product-details', {product: product[0],
   pageTitle:product.title,
-path: '/products'})})
+path: '/products'})
+  })
+  .catch(err=>console.log(err))
  
   
  
 }
 
 exports.getIndex = (req, res, next) => {
-  Product.fetchAll(products => {
+  Product.fetchAll()
+  .then(([rows,fieldData])=>{
     res.render('shop/index', {
-      prods: products,
+      prods: rows,
       pageTitle: 'Shop',
       path: '/'
-    });
-  });
+    })
+  })
+  .catch(err=>{console.log(err);})
 };
 
 exports.getCart = (req, res, next) => {
